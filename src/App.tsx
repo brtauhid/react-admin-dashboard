@@ -1,14 +1,30 @@
-import Home from "./pages/home/Home"
-import Products from "./pages/products/Products"
-import Users from "./pages/users/Users"
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Users from "./pages/users/Users";
+import Products from "./pages/products/Products";
 
 function App() {
-
-  return (
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <div>Hello world!</div>,
+    },
+    {
+      path: "/users",
+      element: <Users></Users>
+    },
+    {
+      path: "/products",
+      element: <Products></Products>
+    },
+  ]);
+  
+   return (
    <>
-   <Home></Home>
-   <Products></Products>
-   <Users></Users>
+   <RouterProvider router ={router}></RouterProvider>
    </>
   )
 }
